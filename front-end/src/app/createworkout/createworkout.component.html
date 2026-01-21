@@ -1,0 +1,78 @@
+<div class="background">
+  <div class="container">
+    <div class="createForm">
+      <div class="create-startupBox">
+        <input placeholder="Create your Workout" [(ngModel)]="workout.name" name="workout.name" (input)="updateSubmitButtonState()">
+      </div>
+        <div class="create-container">
+          <div class="panel" (click)="toggleShootingExercise()">
+              <img src="../../assets/Images/Shooting.jpg">
+              <p class="category-text">Shooting</p>
+            </div>
+            <div class="panel" (click)="toggleCelebrationsExercise()">
+              <img src="../../assets/Images/Celebrations.jpg">
+              <p class="category-text">Celebrations</p>
+            </div>
+            <div class="panel" (click)="togglePenaltiesExercise()">
+              <img src="../../assets/Images/Penalties.jpg">
+              <p class="category-text">Penalties</p>
+            </div>
+            <div class="panel" (click)="toggleSkillsExercise()">
+              <img src="../../assets/Images/Skills.jpg">
+              <p class="category-text">Skills</p>
+            </div>
+            <div class="panel" (click)="toggleDefendingExercise()">
+              <img src="../../assets/Images/Defending.jpg">
+              <p class="category-text">Defending</p>
+            </div>
+            <div class="panel" (click)="toggleDribblingExercise()">
+              <img src="../../assets/Images/Dribbling.jpg">
+              <p class="category-text">Dribbling</p>
+            </div>
+            <div class="panel" (click)="togglePassingExercise()">
+              <img src="../../assets/Images/Passing.jpg">
+              <p class="category-text">Passing</p>
+            </div>
+          </div>
+          <div *ngIf="showShootingExercise">
+            <app-shooting
+              [shootingExercises]="shooting.exercises"
+              [selectedExercises]="selectedExercises"
+              (exerciseSelected)="onExerciseSelected($event)"></app-shooting>
+          </div>
+          <div *ngIf="showCelebrationsExercise">
+            <app-celebrations
+              [celebrationsExercises]="celebrations.exercises"
+              [selectedExercises]="selectedExercises"
+              (exerciseSelected)="onExerciseSelected($event)"></app-celebrations>
+          </div>
+          <div *ngIf="showPenaltiesExercise">
+            <app-penalties
+              [penaltiesExercises]="penalties.exercises"
+              [selectedExercises]="selectedExercises"
+              (exerciseSelected)="onExerciseSelected($event)"></app-penalties>
+          </div>
+          <div *ngIf="showSkillsExercise">
+            <app-skills
+              [skillsExercises]="skills.exercises"
+              [selectedExercises]="selectedExercises"
+              (exerciseSelected)="onExerciseSelected($event)"></app-skills>
+          </div>
+          <div *ngIf="showDefendingExercise">
+            <app-defending
+              [defendingExercises]="defending.exercises"
+              [selectedExercises]="selectedExercises"
+              (exerciseSelected)="onExerciseSelected($event)"></app-defending>
+          </div>
+          <div *ngIf="showDribblingExercise">
+            <app-dribbling
+              [dribblingExercises]="dribbling.exercises"
+              [selectedExercises]="selectedExercises"
+              (exerciseSelected)="onExerciseSelected($event)"></app-dribbling>
+          </div>
+          <div *ngIf="showPassingExercise">
+            <app-passing
+              [passingExercises]="passing.exercises"
+              [selectedExercises]="selectedExercises"
+              (exerciseSelected)="onExerciseSelected($event)"></app-passing>
+          </div>

@@ -1,0 +1,27 @@
+<div class="container" *ngIf="skillsExercises.length > 0">
+  <div>
+    <label for="skillsExercise">Select Skill Moves Exercise:</label>
+    <select id="skillsExercise" [(ngModel)]="selectedExercise" (change)="selectExercise(selectedExercise)">
+      <option *ngFor="let exercise of skillsExercises" [ngValue]="exercise">{{ exercise.name }}</option>
+    </select>
+  </div>
+  <div>
+    <input type="number" placeholder="drills" [(ngModel)]="workoutDrills" name="drills">
+  </div>
+  <div>
+    <input type="number" placeholder="repeats" [(ngModel)]="workoutRepeats" name="repeats">
+  </div>
+  <!-- Display details of the selected exercise -->
+  <div *ngIf="selectedExercise">
+    <h3>Sets</h3>
+    <div *ngFor="let set of selectedExercise.sets; let i = index">
+      <p>{{ 'Set ' + (i + 1) + ': Drills - ' + set.drills + ', Repeats - ' + set.repeats}}
+        <button (click)="editSet(set, i)">Edit</button>
+        <button (click)="deleteSet(set)">Delete</button>
+      </p>
+    </div>
+  </div>
+  <div>
+    <button class="add-set-button"(click)="addSet()">Add Set</button>
+  </div>
+</div>

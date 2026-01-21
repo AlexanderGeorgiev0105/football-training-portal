@@ -1,0 +1,14 @@
+<!-- Add this section in shooting.component.html -->
+<div *ngIf="selectedExercise && selectedExercise.sets && selectedExercise.sets.length > 0">
+  <h3>Sets</h3>
+  <div *ngFor="let set of selectedExercise.sets; let i = index">
+    <p>{{ 'Set ' + (i + 1) + ': Drills - ' + set.drills + ', Repeats - ' + set.repeats}}
+      <button (click)="editSet(set)">Edit</button>
+      <button (click)="deleteSet(set)">Delete</button>
+    </p>
+  </div>
+</div>
+
+<div>
+  <button (click)="addSet()">Add Set</button>
+</div>

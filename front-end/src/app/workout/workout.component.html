@@ -1,0 +1,10 @@
+<div class="frame">
+  <div class="workout-name">{{ workout.name }}</div>
+  <div *ngFor="let exercise of workout.exercises">
+    <p>Exercise: {{ exercise.exercise.name }}</p>
+    <p>Sets: {{exercise.sets || 'N/A'}} Drills: {{ exercise.drills || 'N/A' }}, Repeats: {{ exercise.repeats || 'N/A' }}</p>
+  </div>
+  <button class="button" (click)="deleteWorkout()">
+    <p class="buttonText">Delete Workout</p>
+  </button>
+</div>

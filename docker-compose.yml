@@ -1,0 +1,43 @@
+version: '3'
+services:
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres1
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: new_password
+      POSTGRES_DB: HATTRICK_database
+    ports:
+      - "5432:5432"
+    networks:
+      - default
+
+  backend:
+    container_name: backend
+    build:
+      context: ./back-end
+    depends_on:
+      - postgres
+    networks:
+      - default
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./front-end
+    ports:
+      - "80:80"
+    networks:
+      - default
+  pgadmin4:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+
+networks:
+  default:

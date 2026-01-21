@@ -1,0 +1,66 @@
+[
+  {
+    "email": "admin",
+    "password": "admin",
+    "username": "admin"
+  },
+  {
+    "email": "admin2",
+    "password": "admin2",
+    "username": "admin2"
+  }
+  ,
+  {
+    "email": "admin3",
+    "password": "admin2",
+    "username": "admin3"
+  }
+  ,
+  {
+    "email": "admin4",
+    "password": "admin2",
+    "username": "admin4"
+  }
+  ,
+  {
+    "email": "admin5",
+    "password": "admin2",
+    "username": "admin5"
+  }
+  ,
+  {
+    "email": "admi6",
+    "password": "admin2",
+    "username": "admin6"
+  }
+  ,
+  {
+    "email": "admin7",
+    "password": "admin2",
+    "username": "admin7"
+  }
+  ,
+  {
+    "email": "admin8",
+    "password": "admin2",
+    "username": "admin8"
+  }
+  ,
+  {
+    "email": "admin9",
+    "password": "admin2",
+    "username": "admin9"
+  }
+  ,
+  {
+    "email": "admin11",
+    "password": "admin2",
+    "username": "admin11"
+  }
+  ,
+  {
+    "email": "admin22",
+    "password": "admin2",
+    "username": "admin22"
+  }
+]
